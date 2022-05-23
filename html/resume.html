@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>proc get_resume {{person gpstone}}</title>
+<meta charset="utf-8" />
+<style>
+  body {
+  padding-top: 20px;
+  text-align: center;
+  font-family: monaco, monospace;
+  background-size: cover;
+  color: white;
+  background-color: gray;
+}
+h1, h2 {
+  display: inline-block;
+  background: #fff;
+}
+h1 {
+  font-size: 30px
+}
+h2 {
+  font-size: 20px;
+}
+hr {
+  width: 45%;
+}
+.selected {
+  color: blue;
+}
+
+#job_boxboat, #job_textnow, #job_gemini, #job_lcom, #job_zimmer, #job_dex, #job_cigna, #job_optech, #job_peak, #job_jive, #job_sabrix, #job_unified {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+#job_boxboat .tooltip, #job_textnow .tooltip, #job_gemini .tooltip, #job_lcom .tooltip, #job_zimmer .tooltip, #job_dex .tooltip, #job_cigna .tooltip, #job_optech .tooltip, #job_peak .tooltip, #job_jive .tooltip, #job_sabrix .tooltip, #job_unified .tooltip {
+  visibility: hidden;
+  width: 405px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  position: fixed;
+  top: 30px;
+  left: 10px;
+  z-index: 1;
+  
+}
+
+#job_boxboat:hover .tooltip, #job_textnow:hover .tooltip, #job_gemini:hover .tooltip, #job_lcom:hover .tooltip, #job_zimmer:hover .tooltip, #job_dex:hover .tooltip, #job_cigna:hover .tooltip, #job_optech:hover .tooltip, #job_peak:hover .tooltip, #job_jive:hover .tooltip, #job_sabrix:hover .tooltip, #job_unified:hover .tooltip {
+  visibility: visible;
+}
+
+</style>
+</head>
+<body>
+<script>
+function job_boxboat_in() {
+    document.getElementById("cfg_tf").style.color = 'black';
+    document.getElementById("cfg_ansible").style.color = 'black';
+    document.getElementById("docker").style.color = 'black';
+    document.getElementById("vm_k8s").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("collab_slack").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+    document.getElementById("src_svn").style.color = 'black';
+    document.getElementById("cicd_jenkins").style.color = 'black';
+    document.getElementById("src_github").style.color = 'black';
+    document.getElementById("cloud_azure").style.color = 'black';
+    document.getElementById("prog_csharp").style.color = 'black';
+}
+function job_boxboat_out() {
+    document.getElementById("cfg_tf").style.color = 'white';
+    document.getElementById("cfg_ansible").style.color = 'white';
+    document.getElementById("docker").style.color = 'white';
+    document.getElementById("vm_k8s").style.color = 'white';
+    document.getElementById("cicd_jenkins").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("collab_slack").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+    document.getElementById("src_svn").style.color = 'white';
+    document.getElementById("src_github").style.color = 'white';
+    document.getElementById("cloud_azure").style.color = 'white';
+    document.getElementById("prog_csharp").style.color = 'white';
+}
+function job_textnow_in() {
+    document.getElementById("cloud_aws").style.color = 'black';
+    document.getElementById("cicd_jenkins").style.color = 'black';
+    document.getElementById("cicd_bazel").style.color = 'black';
+    document.getElementById("cfg_tf").style.color = 'black';
+    document.getElementById("cfg_ansible").style.color = 'black';
+    document.getElementById("cfg_puppet").style.color = 'black';
+    document.getElementById("docker").style.color = 'black';
+    document.getElementById("aiops_elk").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("collab_slack").style.color = 'black';
+    document.getElementById("collab_pagerduty").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+    document.getElementById("vm_k8s").style.color = 'black';
+    document.getElementById("src_github").style.color = 'black';
+}
+function job_textnow_out() {
+    document.getElementById("cloud_aws").style.color = 'white';
+    document.getElementById("cicd_jenkins").style.color = 'white';
+    document.getElementById("cicd_bazel").style.color = 'white';
+    document.getElementById("cfg_tf").style.color = 'white';
+    document.getElementById("cfg_ansible").style.color = 'white';
+    document.getElementById("cfg_puppet").style.color = 'white';
+    document.getElementById("docker").style.color = 'white';
+    document.getElementById("aiops_elk").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("collab_slack").style.color = 'white';
+    document.getElementById("collab_pagerduty").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+    document.getElementById("vm_k8s").style.color = 'white';
+    document.getElementById("src_github").style.color = 'white';
+}
+function job_gemini_in() {
+    document.getElementById("cloud_aws").style.color = 'black';
+    document.getElementById("cicd_jenkins").style.color = 'black';
+    document.getElementById("cicd_bazel").style.color = 'black';
+    document.getElementById("src_github").style.color = 'black';
+    document.getElementById("cfg_ansible").style.color = 'black';
+    document.getElementById("aiops_prometheus").style.color = 'black';
+    document.getElementById("aiops_splunk").style.color = 'black';
+    document.getElementById("aiops_grafana").style.color = 'black';
+    document.getElementById("vm_proxmox").style.color = 'black';
+    document.getElementById("vm_nomad").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("collab_slack").style.color = 'black';
+    document.getElementById("db_psql").style.color = 'black';    
+    document.getElementById("collab_pagerduty").style.color = 'black';
+    document.getElementById("sec_vault").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+};
+function job_gemini_out() {
+    document.getElementById("cloud_aws").style.color = 'white';
+    document.getElementById("cicd_jenkins").style.color = 'white';
+    document.getElementById("cicd_bazel").style.color = 'white';
+    document.getElementById("src_github").style.color = 'white';
+    document.getElementById("cfg_ansible").style.color = 'white';
+    document.getElementById("aiops_prometheus").style.color = 'white';
+    document.getElementById("aiops_splunk").style.color = 'white';
+    document.getElementById("aiops_grafana").style.color = 'white';
+    document.getElementById("vm_proxmox").style.color = 'white';
+    document.getElementById("vm_nomad").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("collab_slack").style.color = 'white';
+    document.getElementById("db_psql").style.color = 'white';
+    document.getElementById("collab_pagerduty").style.color = 'white';
+    document.getElementById("sec_vault").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+};
+function job_lcom_in() {
+    document.getElementById("cloud_aws").style.color = 'black';
+    document.getElementById("cicd_bamboo").style.color = 'black';
+    document.getElementById("src_bb").style.color = 'black';
+    document.getElementById("test_gatling").style.color = 'black';
+    document.getElementById("test_jmeter").style.color = 'black';
+    document.getElementById("cfg_tf").style.color = 'black';
+    document.getElementById("cfg_puppet").style.color = 'black';
+    document.getElementById("docker").style.color = 'black';
+    document.getElementById("aiops_elk").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("collab_slack").style.color = 'black';
+    document.getElementById("collab_pagerduty").style.color = 'black';
+    document.getElementById("sec_vault").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+    document.getElementById("prog_csharp").style.color = 'black';
+};
+function job_lcom_out() {
+    document.getElementById("cloud_aws").style.color = 'white';
+    document.getElementById("cicd_bamboo").style.color = 'white';
+    document.getElementById("src_bb").style.color = 'white';
+    document.getElementById("test_gatling").style.color = 'white';
+    document.getElementById("test_jmeter").style.color = 'white';
+    document.getElementById("cfg_tf").style.color = 'white';
+    document.getElementById("cfg_puppet").style.color = 'white';
+    document.getElementById("docker").style.color = 'white';
+    document.getElementById("aiops_elk").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("collab_slack").style.color = 'white';
+    document.getElementById("collab_pagerduty").style.color = 'white';
+    document.getElementById("sec_vault").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+    document.getElementById("prog_csharp").style.color = 'white';
+};
+function job_zimmer_in() {
+    document.getElementById("cloud_azure").style.color = 'black';
+    document.getElementById("cloud_linode").style.color = 'black';
+    document.getElementById("cicd_go").style.color = 'black';
+    document.getElementById("cicd_azure").style.color = 'black';
+    document.getElementById("src_svn").style.color = 'black';
+    document.getElementById("db_psql").style.color = 'black';
+    document.getElementById("aiops_munin").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+    document.getElementById("prog_csharp").style.color = 'black';
+    document.getElementById("prog_swift").style.color = 'black';
+    document.getElementById("prog_sql").style.color = 'black';
+};
+function job_zimmer_out() {
+    document.getElementById("cloud_azure").style.color = 'white';
+    document.getElementById("cloud_linode").style.color = 'white';
+    document.getElementById("cicd_go").style.color = 'white';
+    document.getElementById("cicd_azure").style.color = 'white';
+    document.getElementById("src_svn").style.color = 'white';
+    document.getElementById("db_psql").style.color = 'white';
+    document.getElementById("aiops_munin").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+    document.getElementById("prog_csharp").style.color = 'white';
+    document.getElementById("prog_swift").style.color = 'white';
+    document.getElementById("prog_sql").style.color = 'white';
+};
+function job_dex_in() {
+    document.getElementById("cloud_aws").style.color = 'black';
+    document.getElementById("src_github").style.color = 'black';
+    document.getElementById("cfg_ansible").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+};
+    function job_dex_out() {
+    document.getElementById("cloud_aws").style.color = 'white';
+    document.getElementById("src_github").style.color = 'white';
+    document.getElementById("cfg_ansible").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+};
+function job_cigna_in() {
+    document.getElementById("cfg_salt").style.color = 'black';
+    document.getElementById("cfg_ansible").style.color = 'black';
+    document.getElementById("docker").style.color = 'black';
+};
+function job_cigna_out() {
+    document.getElementById("cfg_salt").style.color = 'white';
+    document.getElementById("cfg_ansible").style.color = 'white';
+    document.getElementById("docker").style.color = 'white';
+};
+function job_optech_in() {
+    document.getElementById("db_psql").style.color = 'black';
+    document.getElementById("prog_web").style.color = 'black';
+    document.getElementById("prog_csharp").style.color = 'black';
+    document.getElementById("prog_java").style.color = 'black';
+    document.getElementById("prog_python").style.color = 'black';
+};
+function job_optech_out() {
+    document.getElementById("db_psql").style.color = 'white';
+    document.getElementById("prog_web").style.color = 'white';
+    document.getElementById("prog_csharp").style.color = 'white';
+    document.getElementById("prog_java").style.color = 'white';
+    document.getElementById("prog_python").style.color = 'white';
+};
+function job_peak_in() {
+    document.getElementById("prog_python").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+};
+function job_peak_out() {
+    document.getElementById("prog_python").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+};
+function job_jive_in() {
+    document.getElementById("prog_java").style.color = 'black';
+    document.getElementById("src_svn").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("prog_sql").style.color = 'black';
+};
+function job_jive_out() {
+    document.getElementById("prog_java").style.color = 'white';
+    document.getElementById("prog_sql").style.color = 'white';
+    document.getElementById("src_svn").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+};
+function job_sabrix_in() {
+    document.getElementById("prog_java").style.color = 'black';
+    document.getElementById("db_psql").style.color = 'black';
+    document.getElementById("src_svn").style.color = 'black';
+    document.getElementById("collab_jira").style.color = 'black';
+    document.getElementById("prog_sql").style.color = 'black';
+};
+function job_sabrix_out() {
+    document.getElementById("prog_java").style.color = 'white';
+    document.getElementById("db_psql").style.color = 'white';
+    document.getElementById("src_svn").style.color = 'white';
+    document.getElementById("collab_jira").style.color = 'white';
+    document.getElementById("prog_sql").style.color = 'white';
+};
+function job_unified_in() {
+    document.getElementById("prog_java").style.color = 'black';
+    document.getElementById("db_sqls").style.color = 'black';
+    document.getElementById("prog_sql").style.color = 'black';
+};
+function job_unified_out() {
+    document.getElementById("prog_java").style.color = 'white';
+    document.getElementById("db_sqls").style.color = 'white';
+    document.getElementById("prog_sql").style.color = 'white';
+};
+</script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="05fae283-e587-4cf3-928e-80442537b961" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div id="parent">
+<p style="text-align: center;">resume of:</p>
+<p style="text-align: center;">gabe stone; 18111 rachael drive; sandy, or 97055</p>
+<p style="text-align: center;">971.666.2599; <a title="home on the web" href="http://iam.gpst.one/">iam.gpst.one</a>; <a title="electronic mail" href="mailto:iam@gpst.one">iam@gpst.one</a></p>
+
+
+<p style="text-align: center;"><em>(hover over position to show summary and skills used)<br /></em></p>
+<p style="text-align: center;"><em>(summary for current position forthcoming)<br /></em></p>
+<p style="text-align: center;">
+    <span id="job_boxboat" onmouseover="job_boxboat_in();" onmouseout="job_boxboat_out();"><span class="tooltip">Nov 2021-present (Solutions Architect)</span>BoxBoat (an IBM company)</span>,
+    <span id="job_textnow" onmouseover="job_textnow_in();" onmouseout="job_textnow_out();"><span class="tooltip">Dec 2020-Nov 2021 (Senior Software Developer in SRE): Projects included Istio/Envoy and Cloud Custodian implementations. Managed CI/CD and observability infrastructure. Interviewed, onboarded and trained newer SRE team members. On-call duties.</span>TextNow</span>,
+    <span id="job_gemini" onmouseover="job_gemini_in();" onmouseout="job_gemini_out();"><span class="tooltip">Oct 2019-Dec 2020(Senior Site Reliability Engineer in Infrastructure): Projects included transitioning sandbox environment from KVM to Proxmox, HashiCorp Nomad PoC.  Daily duties included PostgreSQL administration, working on Ansible codebase to further automation goals, on-call duties.</span>Gemini</span>,
+    <span id="job_lcom" onmouseover="job_lcom_in();" onmouseout="job_lcom_out();"><span class="tooltip">Oct 2018-Oct 2019 (DevOps Engineer): Spearheaded transition from CloudFormation/Troposphere to Terraform and ETCD to DynamoDB, with daily duties including interfacing with EC2, S3, ElastiCache, VPC, etc.</span>Learning.com</span>,
+    <span id="job_zimmer" onmouseover="job_zimmer_in();" onmouseout="job_zimmer_out();"><span class="tooltip">Apr 2017-Sep 2018 (Senior Development Engineer II): Implemented build pipelines, monitoring and log management for all environments & led transition from Linode to Azure for our build and back-end servers.</span>Zimmer Biomet</span>,
+    <span id="job_dex" onmouseover="job_dex_in();" onmouseout="job_dex_out();"><span class="tooltip">Oct 2016-Apr 2017 (Engineer II): Employed Ansible to dynamically update DNS entries for our cloud environments running a mix of CentOS and Ubuntu along with administrative work (Atlassian suite, OpenVPN, etc.)</span>IT Motives (Dexcom)</span>
+</p>
+<p style="text-align: center;">
+    <span id="job_cigna" onmouseover="job_cigna_in();" onmouseout="job_cigna_out();"><span class="tooltip">Feb 2016-Aug 2016 (Senior Development Specialist): Assisted with efforts to implement continuous deployment with CM tools such as Ansible and Salt to manage nginx, haproxy, and more in different environments.</span>Strategic Staffing Solutions (Cigna)</span>,
+    <span id="job_optech" onmouseover="job_optech_in();" onmouseout="job_optech_out();"><span class="tooltip">Feb 2011-Dec 2015 (Software Engineer): Perform design, implementation and maintenance of software used in avionics systems and electric vehicle charging stations.</span>Optimization Technologies/OpConnect</span>,
+    <span id="job_peak" onmouseover="job_peak_in();" onmouseout="job_peak_out();"><span class="tooltip">May 2015-July 2015 (DevOps Software Engineer): Worked on maintaining in-house Python-based provisioning and installation system for bare-metal servers.</span>Peak Hosting</span>
+</p>
+<p style="text-align: center;">
+    <span id="job_jive" onmouseover="job_jive_in();" onmouseout="job_jive_out();"><span class="tooltip">Aug 2010-Feb 2011 (Software Support Engineer): Rendered support for multitiered Java applications, fixed bugs in code base and employed SQL to apply fixes to customer databases.</span>Jive Software</span>,
+    <span id="job_sabrix" onmouseover="job_sabrix_in();" onmouseout="job_sabrix_out();"><span class="tooltip">Sep 2009-Jun 2010 (Support Analyst): Worked with their flagship transaction tax management engine (J2EE) supporting customers and their varied deployments and ERP integrations.</span>Thomson Reuters/Sabrix</span>,
+    <span id="job_unified" onmouseover="job_unified_in();" onmouseout="job_unified_out();"><span class="tooltip">Jan 2007-Sep 2009 (Support Specialist): Diagnosed problems for a variety of cash register and retail back office systems, created standalone Java Swing-based application to parse text-based member orders & coded logic for a department spreadsheet to import and manipulate store data from internal call tracking database.</span>Unified Grocers</span>
+</p>
+<hr />
+<p><u>cloud</u>: <span id="cloud_aws">Amazon Web Services</span>, <span id="cloud_azure">Microsoft Azure</span>, <span id="cloud_gcp">Google Cloud</span>, <span id="cloud_linode">Linode</span>, <span id=cloud_vultr">Vultr</span></p>
+<p><u>ci/cd</u>: <span id="cicd_go">GoCD</span>, <span id="cicd_bazel">Bazel</span>, <span id="cicd_bamboo">Bamboo</span>, <span id="cicd_jenkins">Jenkins</span>, <span id="cicd_azure">Azure DevOps</span></p>
+<p><u>source management</u>: <span id="src_github">Git(Hub)</span>, <span id="src_bb">BitBucket</span>, <span id="src_svn">Subversion</span></p>
+<p><u>testing</u>: <span id="test_gatling">Gatling</span>, <span id=test_jmeter>JMeter</span></p>
+<p><u>configuration</u>: <span id="cfg_tf">Terraform</span>, <span id="cfg_ansible">Ansible</span>, <span id="cfg_puppet">Puppet/Bolt</span>, <span id="cfg_salt">Salt</span></p>
+<p><u>containers & vms</u>: <span id="docker">Docker (Swarm/AWS ECS)</span>, <span id="vm_k8s">Kubernetes (kubeadm/EKS/AKS)</span>, <span id="vm_nomad">Nomad</span>, <span id="vm_esxi">ESXi</span>, <span id="vm_proxmox">Proxmox</span></p>
+<p><u>databases</u>: <span id="db_sqls">SQL Server</span>, <span id="db_psql">PostgreSQL</span></p>
+<p><u>monitoring/analytics</u>: <span id="aiops_elk">ELK</span>, <span id="aiops_prometheus">Prometheus</span>, <span id="aiops_munin">Munin</span>, <span id="aiops_splunk">Splunk</span>, <span id="aiops_graylog">Graylog</span>, <span id="aiops_grafana">Grafana</span></p>
+<p><u>collaboration</u>: <span id="collab_jira">Jira/Confluence</span>, <span id="collab_slack">Slack</span>, <span id="collab_pagerduty">PagerDuty</span></p>
+<p><u>security</u>: <span id="sec_vault">Vault</span></p>
+<p><u>languages</u>: <span id="prog_python">Python</span>, <span id="prog_java">Java</span>, <span id="prog_csharp">C#</span>, <span id="prog_swift">Swift</span>, <span id="prog_web">HTML/CSS/Javascript</span>, <span id="prog_sql">ANSI SQL</span></p>
+</div>
+<p>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px"
+			src="//jigsaw.w3.org/css-validator/images/vcss-blue"
+			alt="Valid CSS!" /></a>
+</p>
+</body>
+</html>
+

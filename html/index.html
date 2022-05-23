@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./www.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+<span id="www">&nbsp;<a id="wwwa" href="https://gpstone.dev/">blog</a></span><span id="domain">&leftarrow;</span><br />&nbsp;<span id="resume"><a id="resumea" href="resume.html">resume</a></span><br />
+</div>
+<script>
+    $("#resume").mouseover(function(event){
+        $("#domain").removeClass("element-animation-up").addClass("element-animation-down");
+    });
+
+    $("#resume").mouseout(function(event){
+        $("#domain").removeClass("element-animation-down").addClass("element-animation-up");
+    });
+
+    (function() {
+			var resumea = document.getElementById('resumea');
+            var domain = document.getElementById('domain');
+			var wwwa = document.getElementById('wwwa');
+
+            function whichAnimationEventStart(){
+			    var t;
+			    var el = document.createElement('fakeelement2');
+			    var animations = {
+			      'animation':'animationstart',
+			      'OAnimation':'oAnimationStart',
+			      'MozAnimation':'transitionstart',
+			      'WebkitAnimation':'webkitAnimationStart'
+			    }
+
+			    for(t in animations){
+			        if( el.style[t] !== undefined ){
+			            return animations[t];
+			        }
+			    }
+			}
+            
+			function whichAnimationEventEnd(){
+			    var t;
+			    var el = document.createElement('fakeelement');
+			    var animations = {
+			      'animation':'animationend',
+			      'OAnimation':'oAnimationEnd',
+			      'MozAnimation':'transitionend',
+			      'WebkitAnimation':'webkitAnimationEnd'
+			    }
+
+			    for(t in animations){
+			        if( el.style[t] !== undefined ){
+			            return animations[t];
+			        }
+			    }
+			}
+
+            var animationEventStart = whichAnimationEventStart();
+			animationEventStart && domain.addEventListener(animationEventStart, function(animationevent) {    
+                    domain.style.textDecoration = "none";
+                    domain.style.color = "black";
+                });
+
+			var animationEventEnd = whichAnimationEventEnd();
+			animationEventEnd && domain.addEventListener(animationEventEnd, function(animationevent) {
+                if(animationevent.animationName === "animationFramesDown") {
+		    resumea.style.textDecoration = "underline";
+                    domain.style.textDecoration = "underline";
+                    domain.style.color = "yellow";
+                    wwwa.style.textDecoration = "none";
+                } else {
+                    resumea.style.textDecoration = "none";
+                    domain.style.textDecoration = "underline";
+                    domain.style.color = "powderblue"
+                    wwwa.style.textDecoration = "underline";
+                }
+			});
+
+		})();
+</script>
+</body>
+</html>
+
+
